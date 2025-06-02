@@ -1,0 +1,57 @@
+*{
+    background-color: beige;
+}
+
+.links ul{
+    list-style-type: none;
+    padding: 0px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.links a{
+    text-decoration: none;
+    display:flex ;
+    text-align: center;
+    padding: 15px;
+
+}
+
+.links a:hover{
+    background-color: red;
+}
+
+.links li{
+    float:left;
+}
+
+.content{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+h2{
+    padding-left: 30px;
+}
+
+.content .text{
+    flex:1;
+}
+
+.content img{
+    width: 600px;
+    height: auto;
+}
+
+.proj{
+    border:solid;
+    background-color: aqua;
+}
+
+.hire{ 
+    border: solid;
+    background-color: aqua;
+}
+
