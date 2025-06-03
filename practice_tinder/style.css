@@ -1,0 +1,118 @@
+*{
+    margin: 0px;
+}
+
+#tinder{
+    width: 60px;
+    height: 60px;
+    float:left;
+    margin-right: 40px;
+    display:flex;
+}
+
+
+#logo{
+    width: 60px;
+    height: 60px;
+    float:left;
+    margin-right: 40px;
+    display:flex;
+}
+
+
+#links ul{
+    margin-left: 20px;
+    text-decoration: none;
+    overflow: hidden;
+
+}
+
+#links a{
+    text-decoration: none;
+
+}
+
+#links li{
+    font-size: larger;
+    float:left;
+    list-style-type: none;
+    padding:20px;
+    user-select: none;
+}
+
+#links a:hover{
+    background-color: red;
+}
+
+.text{
+    flex:1;
+}
+
+.text h1{
+    margin: 20px;
+}
+
+.right-triangle{
+    width: 0px;
+    height: 0px;
+    border-top: 30px solid transparent;
+    border-left: 50px solid #000; 
+    border-bottom: 30px solid transparent;
+    margin-top: 300px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.left-triangle{
+    width: 0px;
+    height: 0px;
+    border-top: 30px solid transparent;
+    border-right: 50px solid #000; 
+    border-bottom: 30px solid transparent;
+    margin-top: -50px;
+    margin-left: 1500px;
+    cursor: pointer;
+}
+
+#cat{
+    height:500px;
+    width:500px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -250px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    margin-top: 50px;
+}
+
+.like, .reject {
+  padding: 20px 20px;
+  border-radius: 20%;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.like {
+  background-color: green;
+}
+
+.reject {
+  background-color: red;
+}
+
+
+
+
