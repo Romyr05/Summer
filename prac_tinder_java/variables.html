@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+
+<body>
+    <script>
+        let numerator = "";
+        function append(value)
+        {
+            if ((value === '+' || value === '-' || value === 0) && numerator === "" ) {
+                alert("Cannot start with a 0 or an operator.");
+                return;
+            }
+            numerator += value;
+            console.log(numerator);
+        }
+
+        /* CONTINUE
+        function calculate(){
+        if(numerator == "")
+        {
+            console.log("There is nothing to calculate");
+        }
+
+        for(let i = 0;i<numerator.lenght;i++){
+            if(numerator[i] >= 0 || numerator[i] <= 9)
+        {
+            numerator += numerator
+        }
+        }
+
+        }
+        */
+    </script>
+
+<p>
+    <button onclick="append(0)">0</button>
+
+    <button onclick="append(1)">1</button>
+
+    <button onclick="append(2)">2</button>
+
+</p>
+
+<p>
+    <button onclick="append(3)">3</button>
+
+    <button onclick="append(4)">4</button>
+
+    <button onclick="append(5)">5</button>
+
+</p>
+
+<p>
+    <button onclick="append(6)">6</button>
+
+    <button onclick="append(7)">7</button>
+
+    <button onclick="append(8)">8</button>
+
+</p>
+
+<p>
+    <button onclick="append(9)">9</button>
+
+    <button onclick="append(`+`)">+</button>
+
+    <button onclick="append(`-`)">-</button>
+
+</p>
+
+<p>
+    <button onclick="total = eval(numerator); console.log(total)">=</button>
+</p>
+</body>
