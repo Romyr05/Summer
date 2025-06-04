@@ -9,36 +9,36 @@
     ">Show Quantity</button>
 
     <button onclick="
-        checkMax(1);
+        console.log(`Cart quantity: ${checkMax(1)}`);
     ">Add to Cart</button>
 
     <button onclick="
-        checkMax(2);
+        console.log(`Cart quantity: ${checkMax(2)}`);
     ">+2</button>
 
     <button onclick="
-        checkMax(3);
+        console.log(`Cart quantity: ${checkMax(3)}`);
     ">+3</button>
 
     <button onclick="
-        checkMax(4);
+        console.log(`Cart quantity: ${checkMax(4)}`);
     ">+4</button>
 
     <button onclick="
-        checkMax(5);
+        console.log(`Cart quantity: ${checkMax(5)}`);
     ">+5</button>
 
     <!-- vvv This code was changed. vvv -->
     <button onclick="
-        checkMin(1);
+        console.log(`Cart quantity: ${checkMin(1)}`);
     ">Remove from cart</button>
 
     <button onclick="
-        checkMin(2);
+        console.log(`Cart quantity: ${checkMin(2)}`);
     ">-2</button>
 
     <button onclick="
-        checkMin(3);
+        console.log(`Cart quantity: ${checkMin(3)}`);
     ">-3</button>
     <!-- ^^^ This code was changed. ^^^ -->
 
@@ -56,11 +56,7 @@
         {
             alert('The Cart is full')
         }
-        else
-        {
-            cartQuantity += number;
-            console.log(`Cart quantity: ${cartQuantity}`);
-        }
+        return cartQuantity += number;
     }
 
         function checkMin(number){
@@ -68,11 +64,7 @@
             if(cartQuantity - number < 0){
             alert('Not enough items in the cart')
             }
-
-            else{
-                cartQuantity -= number;
-                console.log(`Cart Quantity: ${cartQuantity}`);
-            }
+        return cartQuantity -= number;
         }
         
     </script>
