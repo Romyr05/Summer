@@ -55,16 +55,22 @@
             if(cartQuantity + number > 10)
         {
             alert('The Cart is full')
+            return cartQuantity;
         }
-        return cartQuantity += number;
+        cartQuantity += number;
+        return cartQuantity;
+
+
     }
 
         function checkMin(number){
 
             if(cartQuantity - number < 0){
             alert('Not enough items in the cart')
+            return cartQuantity
             }
-        return cartQuantity -= number;
+        cartQuantity -= number; 
+        return cartQuantity
         }
         
     </script>
