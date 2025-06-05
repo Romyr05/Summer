@@ -11,11 +11,25 @@
     <h1> Rock Paper and Scissors</h1>
     <script>
 
-        const score = {
-            wins: 0,
-            lose: 0,
-            tie: 0
+        //must have a local storage first 
+        const score = JSON.parse(localStorage.getItem('score')) ||
+         {
+            wins : 0,
+            lose:0,
+            tie:0
         };
+
+        //the one above is the same as
+        /*
+        if(score === null)
+        {
+         score = {
+            wins : 0,
+            lose:0,
+            tie:0
+        };
+        }
+        */
 
         function play(player_move){
 
@@ -59,7 +73,11 @@ Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`
                     alert(`You picked ${player_move}. Computer picked ${computer_choice}. You Lose
 Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`);
             }
+
+        localStorage.setItem('score',JSON.stringify(score));
+
         }
+
 
 
     </script>
@@ -83,6 +101,6 @@ Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`);
         score.tie = 0;
         alert(`Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`);">Reset Score</button>
     </p>
-    
+
 
 </body>
