@@ -10,7 +10,23 @@
 </head>
 
 <body>
+  <p>Youtube Subscribe Button</p>
+    <button onclick = "test('.js-sub'); " class = 'js-sub'>    Subscribe   </button>
+  <p>Rock Paper Scissors</p>
+  <a href = "test.html">Click Here</a>
+
     <script>
+      function test(a)
+      {
+        const hello = document.querySelector(a);
+        if (hello.innerHTML === 'Subscribe')
+      {
+        hello.innerHTML = 'Subscribed';
+      }
+      else{
+        hello.innerHTML = 'Subscribe';
+      }
+      }
 
     </script>
 

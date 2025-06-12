@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta name="description" content="Rock Paper and Scissors">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="John Romyr">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Paper and Scissors</title>
+
+<body>
+    <h1> Rock Paper and Scissors</h1>
+    <script>
+
+        function play(player_move){
+
+            let computer_choice = "";
+
+            const randomMov = Math.random();
+            console.log(`random number: ${randomMov}`);
+            if(randomMov <= 1/3)
+            {
+                computer_choice = 'rock';
+            }
+            else if(randomMov <= 2/3)
+            {
+                computer_choice = 'paper';
+            }
+            else{
+                computer_choice = 'scissors';
+            }
+
+            let result = '';
+
+            if(player_move === computer_choice)
+            {
+                    alert(`You picked ${player_move}. Computer picked ${computer_choice}. Its a tie`);
+            }
+            else if(player_move)
+            {
+                if(player_move == 'rock' && computer_choice == 'scissors'
+                || player_move == 'scissors' && computer_choice == 'paper' 
+                || player_move == 'paper' && computer_choice == 'rock'){
+                    alert(`You picked ${player_move}. Computer picked ${computer_choice}. You Win`);
+                }
+            }
+            else {
+                    alert(`You picked ${player_move}. Computer picked ${computer_choice}. You Lose`);
+            }
+        }
+
+
+    </script>
+
+
+    <p>
+        
+        <button onclick=
+        "play('rock')
+        ">Rock</button>
+
+        <button onclick = "
+        play('paper')
+        ">Paper</button>
+
+        <button onclick = "play('scissors')"
+        >Scissors</button>
+    </p>
+</body>
