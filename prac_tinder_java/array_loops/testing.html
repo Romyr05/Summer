@@ -50,23 +50,32 @@
 
         function f_add(){
             const input = document.querySelector('.js-todo').value;
-            Arr3.push(input);
+            if (input !== '') {
+                Arr3.push(input);
+            }
+            f_render();
+        }
 
+
+        function f_render(){
             let todo = '';
 
             for(let i = 0; i<Arr3.length;i++){
                 const arr = Arr3[i];
                 const html = `<p>
                     ${arr}
-                    <button onclick = "Arr3.splice(${i},1);
-                     f_add();
-                     ">DELETE</button>
+                    <button onclick = "deleteTodo(${i})">DELETE</button>
                     </p>`
                 todo += html;
             }
             console.log(todo);
  
             document.querySelector('.output').innerHTML = todo;
+        }
+
+        function deleteTodo(index) {
+            Arr3.splice(index, 1);
+            f_render();
         }
 
     </script>
