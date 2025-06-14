@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fizzbuzz</title>
+</head>
+
+<body>
+    <script>
+
+        function findIndex(array,word)
+        {
+            for(let i = 0;i<array.length;i++){
+                if(array[i] === word){
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        function add(array){
+        for(let i = 1;i<=20;i++){
+            if(i % 3 === 0)
+            {
+                arr.push('Fizz');
+            }
+            else if(i%5 === 0){
+                arr.push('Buzz');
+            }
+            else{
+                arr.push(i);
+            }
+        }
+        console.log(arr)
+        }
+
+        let arr = []
+        add(arr)
+
+    </script>
+
+
+</body>
