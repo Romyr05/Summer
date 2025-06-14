@@ -68,13 +68,13 @@
                     </p>`
                 todo += html;
             }
-            console.log(todo);
  
             document.querySelector('.output').innerHTML = todo;
         }
 
         function deleteTodo(index) {
             Arr3.splice(index, 1);
+            //need to call f_render again to make sure that it is updated
             f_render();
         }
 

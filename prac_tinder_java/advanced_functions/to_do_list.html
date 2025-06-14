@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array</title>
+  </head>
+  <body>
+    <p>Todo List</p>
+    <input placeholder="Todo name" class = 'js-todo'>
+    <input placeholder="yyyy-mm-dd" class = 'js-dueDate'>
+    <button class = 'js-button' onclick="f_add()">add</button>
+
+    <div class ='output'></div>
+    
+    <script>
+
+        const Arr1 = []
+
+        function f_add(){
+            const input = document.querySelector('.js-todo').value;
+            const date = document.querySelector('.js-dueDate').value;
+            if (input !== '') {
+                Arr1.push({
+                   input,
+                   date
+                   // this is equal to Arr1.input = input
+                });
+            }
+            //need to render to output it
+            f_render();
+        }
+
+        function f_render(){
+            let todo = '';
+
+            for(let i = 0; i<Arr1.length;i++){
+                const arr = Arr1[i]; 
+                const {input, date} = arr;
+                //these are equal to const input = arr.input and const date = arr.date
+                const html = `<p>
+                    ${input} ${date}
+                    <button onclick = "deleteTodo(${i})">DELETE</button>
+                    </p>`
+                todo += html;
+            }
+ 
+            document.querySelector('.output').innerHTML = todo;
+        }
+
+        function deleteTodo(index) {
+            Arr1.splice(index, 1);
+            //need to call f_render again to make sure that it is updated
+            f_render();
+        }
+        console.log(Arr1)
+
+    </script>
+  </body>
+</html>
