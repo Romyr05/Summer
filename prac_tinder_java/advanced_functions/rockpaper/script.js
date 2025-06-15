@@ -32,35 +32,34 @@
             {
                     score.tie++;
                     result = 'tie';
-                    alert(`You picked ${player_move}. Computer picked ${computer_choice}. Its a tie
-Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`);
             }
             else if
                ((player_move === 'rock' && computer_choice === 'scissors')
                 || (player_move === 'scissors' && computer_choice === 'paper') 
                 || (player_move === 'paper' && computer_choice === 'rock')){
                     score.wins++;
-                    result = 'lose';
-                    alert(`You picked ${player_move}. Computer picked ${computer_choice}. You Win 
-Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`
-                        
-                    );
+                    result = 'win';
+
                 }
             else {
                  score.lose++;
-                    result = 'Win';
-                    alert(`You picked ${player_move}. Computer picked ${computer_choice}. You Lose
-Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`);
-            }
+                    result = 'lose';
 
+            }
 
         //sets the score into a JSON for the getItem
         localStorage.setItem('score',JSON.stringify(score));
+        updateMatch(player_move,computer_choice);
+
         //updates result
         document.querySelector('.j-result').innerHTML = result;
         //updates scores
         updateScore();
 
+        }
+
+        function updateMatch(player_move,computer_choice){
+            document.querySelector('.j-matchup').innerHTML = `You picked ${player_move}. Computer picked ${computer_choice}`
         }
 
         //updates the score
@@ -88,10 +87,20 @@ Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`);
             return computer_choice;
         }
 
+        let is_autoplay = false;
+        let interval_id;
 
         function autoplay(){
 
-            setInterval(function(){
-                const playermove = computer_move();
-                play(playermove)},1000);
+            if(!is_autoplay){
+                interval_id = setInterval(function(){
+                    const playermove = computer_move();
+                    play(playermove);
+            },1000);
+                is_autoplay = true;
+            }else{
+                clearInterval(interval_id);
+                is_autoplay = false;
+            }
+
         }
