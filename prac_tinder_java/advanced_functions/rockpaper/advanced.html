@@ -22,6 +22,7 @@
 
     </p>
 
+        <p class = 'j-result'></p>
         <p class = 'j-score' ></p>
 
     <p>
@@ -32,7 +33,11 @@
         localStorage.setItem('score',JSON.stringify(score));
         updateScore();
         alert(`Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`);">Reset Score</button>
+
+        <button onclick="autoplay()">Auto Play</button>
     </p>
+
+
 
     <script src="script.js"></script>
   </body>
