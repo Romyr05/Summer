@@ -32,10 +32,12 @@
         }
 
         //Arrow function
-        const deleteTodo = () => {
+        const deleteTodo = (index) => {
             Arr1.splice(index, 1);
             //need to call f_render again to make sure that it is updated
             f_render();
         }
 
-        console.log(Arr1)
+        document.querySelector('.js-button').addEventListener("click",()=>{
+            f_add();
+        })
