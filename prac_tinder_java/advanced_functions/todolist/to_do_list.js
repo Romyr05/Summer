@@ -23,12 +23,19 @@
                 //these are equal to const input = arr.input and const date = arr.date
                 const html = `<p>
                     ${input} ${date}
-                    <button onclick = "deleteTodo(${index})">DELETE</button>
+                    <button class = "js-delete">DELETE</button>
                     </p>`
                 todo += html;
             });
  
             document.querySelector('.output').innerHTML = todo;
+
+            document.querySelectorAll(".js-delete").forEach((del,index) =>{
+                del.addEventListener('click',()  =>{
+                    deleteTodo(index);
+                })
+            })
+
         }
 
         //Arrow function
@@ -41,3 +48,4 @@
         document.querySelector('.js-button').addEventListener("click",()=>{
             f_add();
         })
+
