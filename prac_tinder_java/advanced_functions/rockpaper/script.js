@@ -32,6 +32,38 @@
             play('scissors');
         })
 
+        document.getElementById('ans').addEventListener("click",()=>{
+            const a = document.getElementById('alt').value;
+            const choice = test(a);
+            play(choice);
+        })
+
+        function test(choice) {
+            if(choice === 'r')
+            {
+                return 'rock'
+            }
+            else if(choice === 's')
+            {
+                return 'scissors'
+            }
+            else if(choice === 'p')
+            {
+                return 'paper'
+            }
+        }
+
+
+
+        /*
+        also one way of doing the thing above 
+
+        document.addEventListener('keydown',(event) => {
+            console.log(event.key)
+        })
+            */
+        
+
         function play(player_move){
 
             let computer_choice = computer_move();
