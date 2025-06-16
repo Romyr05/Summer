@@ -20,6 +20,18 @@
         }
         */
 
+        document.querySelector('.js-rock').addEventListener('click', ()=>{
+            play('rock')
+        })
+
+        document.querySelector('.js-paper').addEventListener('click', () => {
+            play('paper');
+        })
+
+        document.querySelector('.js-scissors').addEventListener('click', () => {
+            play('scissors');
+        })
+
         function play(player_move){
 
             let computer_choice = computer_move();
