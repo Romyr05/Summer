@@ -140,11 +140,17 @@
                 interval_id = setInterval(function(){
                     const playermove = computer_move();
                     play(playermove);
+
             },1000);
+                document.getElementById('js-autoplay').innerHTML = 'Stop Playing'
                 is_autoplay = true;
             }else{
                 clearInterval(interval_id);
                 is_autoplay = false;
+                document.getElementById('js-autoplay').innerHTML = 'Auto Play'
             }
-
         }
+
+        document.getElementById('js-autoplay').addEventListener("click",() => {
+            autoplay();
+        })
