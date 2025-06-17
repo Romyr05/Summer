@@ -154,3 +154,40 @@
         document.getElementById('js-autoplay').addEventListener("click",() => {
             autoplay();
         })
+
+        function reset() {
+            score.wins = score.lose = score.tie = 0;
+            localStorage.setItem('score',JSON.stringify(score));
+            alert(`Wins: ${score.wins}, Losses ${score.lose} Ties: ${score.tie}`);
+        }
+        
+        /*
+        document.getElementById('js-reset').addEventListener("click",() => {
+            reset();
+        })
+        */
+        document.getElementById('js-reset').addEventListener("click", () =>{
+                reset_conf()
+        })
+
+        function reset_conf() {
+            document.querySelector(".j-reset-confirm").innerHTML =
+            `Reset? <button class = 'js-yes'>Yes </button> <button class ='js-no'> No</button>`;
+
+
+            document.querySelector('.js-yes').addEventListener("click", () =>{
+            reset();
+            updateScore();
+            hide_reset();
+            })
+
+            document.querySelector('.js-no').addEventListener("click", () =>{
+            hide_reset();
+            updateScore()
+            })
+        }
+
+
+        function hide_reset(){
+            document.querySelector('.j-reset-confirm').innerHTML = ""
+        }
