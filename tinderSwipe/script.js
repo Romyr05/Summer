@@ -18,7 +18,7 @@ document.getElementById('upload-file').addEventListener("change",function() {
     })
 */
 
-
+//Clicking the hidden function
 function pic_clicked(){
     document.getElementById('upload-file').click()
 }
