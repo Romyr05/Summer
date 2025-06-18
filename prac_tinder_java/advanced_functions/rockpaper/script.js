@@ -187,6 +187,8 @@
             })
         }
 
+        
+
 
         function hide_reset(){
             document.querySelector('.j-reset-confirm').innerHTML = ""
