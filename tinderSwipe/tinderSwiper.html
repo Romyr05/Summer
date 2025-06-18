@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Testing TT</title>
-    <script src ="script.js"></script>
     <link rel = "stylesheet" href="styles.css">
 
     <body>
@@ -29,9 +28,12 @@
         <button class="keep">Keep</button>
         <button class="delete">Delete</button>
 
-        <input type="file" class = "upload-file " />
-        <input type = "button" value = "Upload Pic/Pics" onclick="document.querySelector('.upload-file').click()" />
+        <input type ="file" id = "upload-file" multiple display: hidden  onchange="file_upload(event)"/>
+        <input type = "button" value = "Upload Pic/Pics" onclick="pic_clicked()" />
+        <div id  ='preview-img'> </div>
 
 
+
+        <script src ="script.js"></script>
     </body>
 </head>
