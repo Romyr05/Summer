@@ -9,15 +9,6 @@ var file_upload = function (event){
     }
 }
 
-/*
-document.getElementById('upload-file').addEventListener("change",function() {
-    const file = this.files[0];
-    const prevImg = document.getElementById('preview-img')
-    prevImg.src = URL.createObjectURL(file);
-    console.log("File Selected:", file.name)
-    })
-*/
-
 //Clicking the hidden function
 function pic_clicked(){
     document.getElementById('upload-file').click()
