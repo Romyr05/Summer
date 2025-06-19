@@ -1,7 +1,8 @@
 pictures = [];
+filequeue = []
 
 keep = [];
-    //here it needs to be different pictures to run
+
 var file_upload = function (event){
     //appends each image to the children
     for(let i = 0; i< event.target.files.length;i++){
