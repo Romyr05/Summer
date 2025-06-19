@@ -1,31 +1,47 @@
-pictures = [];
-filequeue = []
-
-keep = [];
-
-var file_upload = function (event){
-    //appends each image to the children
-    for(let i = 0; i< event.target.files.length;i++){
-        var image = document.createElement('img')
-        image.src = URL.createObjectURL(event.target.files[i])
-        pictures.push(image)
-        document.getElementById('preview-img').appendChild(pictures[i])
-        console.log(pictures);
-    }
-}
-
-//Clicking the hidden function
+//hiding the upload file function
 function pic_clicked(){
     document.getElementById('upload-file').click()
 }
 
+    queueImage= [];
 
-document.querySelector('.keep').addEventListener("click", () => {
-    for(let i = 0; i<pictures.length; i++)
-    {
-        keep.push(pictures[i].src)
-        document.getElementById('test').src = keep[i]
-        console.log(i);
+    document.getElementById('upload-file').addEventListener("change",function(){
+        //upload the image in the frontend
+        const files = Array.from(this.files)
+
+        files.forEach((file,index) =>{
+
+            const picture = URL.createObjectURL(file);
+            queueImage.push({file,url:picture})
+
+            console.log(index)
+            const image = document.createElement('img')
+            image.src = picture;
+            image.id = `image-${index}`;
+
+            if(index === 0)
+            {
+                document.getElementById('test').src = picture;
+            }
+
+            console.log(image);
+            document.getElementById('preview-img').appendChild(image);
+        })
+    })
+
+    stored = [];
+
+
+    function keep(){
+        document.getElementById('keep').addEventListener("click",() =>{
+            console.log("asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            stored.push(queueImage[0])
+            document.getElementById('test123').src = queueImage[0].url;
+        })
     }
-})
+
+
+
+
+
 
