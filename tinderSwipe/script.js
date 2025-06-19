@@ -1,11 +1,15 @@
+pictures = [];
 
+keep = [];
     //here it needs to be different pictures to run
 var file_upload = function (event){
     //appends each image to the children
     for(let i = 0; i< event.target.files.length;i++){
         var image = document.createElement('img')
         image.src = URL.createObjectURL(event.target.files[i])
-        document.getElementById('preview-img').appendChild(image)
+        pictures.push(image)
+        document.getElementById('preview-img').appendChild(pictures[i])
+        console.log(pictures);
     }
 }
 
@@ -13,3 +17,14 @@ var file_upload = function (event){
 function pic_clicked(){
     document.getElementById('upload-file').click()
 }
+
+
+document.querySelector('.keep').addEventListener("click", () => {
+    for(let i = 0; i<pictures.length; i++)
+    {
+        keep.push(pictures[i].src)
+        document.getElementById('test').src = keep[i]
+        console.log(i);
+    }
+})
+
