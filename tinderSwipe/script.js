@@ -28,6 +28,7 @@ function pic_clicked(){
             document.getElementById('preview-img').appendChild(image);
         })
     })
+    //id is not updating
 
     stored = [];
 
