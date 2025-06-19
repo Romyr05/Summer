@@ -1,30 +1,23 @@
-pictures = [];
-
-keep = [];
-    //here it needs to be different pictures to run
-var file_upload = function (event){
-    //appends each image to the children
-    for(let i = 0; i< event.target.files.length;i++){
-        var image = document.createElement('img')
-        image.src = URL.createObjectURL(event.target.files[i])
-        pictures.push(image)
-        document.getElementById('preview-img').appendChild(pictures[i])
-        console.log(pictures);
-    }
-}
-
-//Clicking the hidden function
+//hiding the upload file function
 function pic_clicked(){
     document.getElementById('upload-file').click()
 }
 
 
-document.querySelector('.keep').addEventListener("click", () => {
-    for(let i = 0; i<pictures.length; i++)
-    {
-        keep.push(pictures[i].src)
-        document.getElementById('test').src = keep[i]
-        console.log(i);
-    }
-})
+function file_upload(event){
+    console.log('a');
+    var image = document.createElement('img')
+    document.getElementById('upload-file').addEventListener("click",function(){
+        //upload the image in the frontend
+        const file = event.target.files[0]
+        image.src = URL.createObjectURL(file)
+        if(file)
+        {
+            console.log(image);
+            document.getElementById('test').appendChild(image);
+        }
+        //show the image
+
+    })
+}
 
