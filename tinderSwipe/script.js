@@ -1,7 +1,8 @@
-//hiding the upload file function
-function pic_clicked(){
-    document.getElementById('upload-file').click()
-}
+
+document.getElementById('test123').addEventListener("click",()=>{
+    document.getElementById('upload-file').click();
+})
+
 
 imageKeep = [];
 queueImage= [];
@@ -20,7 +21,6 @@ document.getElementById('upload-file').addEventListener("change",function(){
         remove_all(queueImage);
         console.log(`rawr ${queueImage}`)
     }
-    track_queue = 0;
 
     files.forEach((file,index) =>{
         const picture = URL.createObjectURL(file);
@@ -31,7 +31,9 @@ document.getElementById('upload-file').addEventListener("change",function(){
         {
             image.src = ImageAll[track].url
             track++;
+            image.classList.add('image-prev');
         }
+
         document.getElementById('preview-img').append(image)
     })
     document.getElementById('upload-file').value = ""
@@ -52,7 +54,7 @@ function display_image() {
         track_queue++
     }else
     {
-        document.getElementById('test123').src = ""
+        document.getElementById('test123').src = "/tinderSwipe/images/tinder2.png"
     }
 }
 
@@ -66,7 +68,6 @@ document.getElementById('keep').addEventListener("click",() => {
         console.log(imageKeep);
         currentIndex++
         display_image()
-        track_queue++;
     }
 })
 
@@ -74,12 +75,10 @@ document.getElementById('keep').addEventListener("click",() => {
 document.getElementById('delete').addEventListener("click", () => {
     if(currentIndex < queueImage.length)
     {
-        queueImage[currentIndex] = null;
         console.log(`queue: ${(queueImage.length)}`);
         console.log(`currentIndex: ${(currentIndex)}`);
         currentIndex++
         display_image()
-
     }
 })
 
