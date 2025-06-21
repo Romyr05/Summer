@@ -64,7 +64,8 @@ document.getElementById('keep').addEventListener("click",() => {
         imageKeep.push(queueImage[currentIndex]);
         const keep = document.createElement('img');
         keep.src = imageKeep[currentIndex].url
-        document.getElementById('keeped-img').append(keep)
+        document.getElementById('keeps').append(keep)
+        keep.classList.add('image-keep');
         console.log(imageKeep);
         currentIndex++
         display_image()
@@ -95,7 +96,7 @@ if(track_queue === queueImage.length)
     console.log(keeped)
     const keep = document.createElement('img');
     keep.src = imageKeep[index].url
-    document.getElementById('keeped-img').appendChild(keep[index])
+    document.getElementById('keeps').appendChild(keep)
 })
 }
 
@@ -103,10 +104,10 @@ let clicked = false
 
 document.getElementById('check-keep').addEventListener("click",()=>{
     if(!clicked){
-        document.getElementById('keeped-img').style.display = 'block';
+        document.getElementById('keeps').style.display = 'flex';
         clicked = true
     }else{
-        document.getElementById('keeped-img').style.display = 'none';
+        document.getElementById('keeps').style.display = 'none';
         clicked = false
     }
     
