@@ -5,53 +5,52 @@
     <meta name="viewport" content="width=device-width" />
     <title>Testing TT</title>
     <link rel = "stylesheet" href="styles.css">
-
-    <body>
-        <!-- Navigation Bar -->
-        <nav class = "navbar">
-            <div class = "links">
-                <ul>
-                    <li id = "logo">Testing</li>
-                    <li><a href = "homepage.html">HOME</a></li>
-                    <li><a href = "About.html">ABOUT</a></li>
-                    <li><a href = "tinderSwiper.html">TINDER</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class = "board">
-            <div class="card">
-                <img id = 'test123' src = "/tinderSwipe/images/tinder2.png" set alt = "">  
-            </div>
-        </div>
-
-        <br>
-
-
-         <div class = "buttons">
-            <div id = "keep-div">
-                <img src = "/tinderSwipe/images/heart.png" id = 'keep'>
-            </div>
-            <div id = "delete-div">
-                <img src = "/tinderSwipe/images/download.png" id ='delete'>
-            </div>
-        </div>
-
-        <input type ="file" id = "upload-file" multiple display: hidden />
-       
-        <br>
-
-
-
-        <div id  ='preview-img'>
-            <p>All Images:</p>
-        </div>
-
-        
-        <button id = 'check-keep'>Saved</button>
-        <div id = 'keeped-img' style = "display:none" >aasdasd</div>
-
-
-        <script src ="script.js"></script>
-    </body>
 </head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class = "navbar">
+        <div class = "links">
+            <ul>
+                <li id = "logo">Testing</li>
+                <li><a href = "homepage.html">HOME</a></li>
+                <li><a href = "About.html">ABOUT</a></li>
+                <li><a href = "tinderSwiper.html">TINDER</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class = "board">
+        <div class="card">
+            <img id = 'test123' src = "/tinderSwipe/images/test.png" set alt = "">  
+        </div>
+    </div>
+
+    <br>
+
+
+        <div class = "buttons">
+        <div id = "keep-div">
+            <img src = "/tinderSwipe/images/heart.png" id = 'keep'>
+        </div>
+        <div id = "delete-div">
+            <img src = "/tinderSwipe/images/download.png" id ='delete'>
+        </div>
+    </div>
+
+    <input type ="file" id = "upload-file" multiple display: hidden />
+    
+    <br>
+    
+
+
+    <h2 class="section-title">All Images</h2>
+    <div id="preview-img" class="image-grid"></div>
+
+    
+    <button id = 'check-keep'>Saved</button>
+    <div id="keeps" class="image-grid"></div>
+
+
+    <script src ="script.js"></script>
+</body>
