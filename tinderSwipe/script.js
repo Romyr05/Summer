@@ -42,6 +42,7 @@ document.getElementById('upload-file').addEventListener("change",function(){
     console.log(`track: ${track_queue}`)
 
     display_image()
+    updateProgressBar()
 
 
 })
@@ -55,7 +56,7 @@ function display_image() {
         track_queue++
     }else
     {
-        document.getElementById('test123').src = "/tinderSwipe/images/tinder2.png"
+        document.getElementById('test123').src = "/tinderSwipe/images/test.png"
     }
 }
 
@@ -72,6 +73,7 @@ document.getElementById('keep').addEventListener("click",() => {
         tracking++
         currentIndex++
         display_image()
+        updateProgressBar()
     }
 })
 
@@ -83,6 +85,7 @@ document.getElementById('delete').addEventListener("click", () => {
         console.log(`currentIndex: ${(currentIndex)}`);
         currentIndex++
         display_image()
+        updateProgressBar()
     }
 })
 
@@ -158,3 +161,9 @@ card.addEventListener('mouseleave', (e)=>{
     endX = e.screenX
     swipe();
 })
+
+
+function updateProgressBar() {
+    const progress = (currentIndex / queueImage.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progress}%`;
+}
