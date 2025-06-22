@@ -53,7 +53,7 @@ body{
 
 .card
 {
-    margin-top: 120px;
+    margin-top: 10px;
     background: #ff5864;
     opacity: 1;
     height: 300px;
@@ -73,7 +73,6 @@ body{
 }
 
 .board{  
-    margin-top: 80px;
     height:300px;
     display: flex;
     justify-content: center;
@@ -155,8 +154,8 @@ body{
 }
 
 .image-prev,.image-keep{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -171,3 +170,22 @@ body{
   transform: scale(1.05);
 }
 
+.progress-container {
+    width: 80%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 51px auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    transition: width 0.3s ease-in-out;
+}
+
+#keeps{
+    display: none;
+}
