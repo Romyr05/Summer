@@ -10,6 +10,7 @@ ImageAll = [];
 let currentIndex = 0;
 let track = 0;
 let track_queue = 0;
+let tracking = 0; 
 
 document.getElementById('upload-file').addEventListener("change",function(){
     //upload the image in the frontend
@@ -60,13 +61,15 @@ function display_image() {
 
 document.getElementById('keep').addEventListener("click",() => {
     if(currentIndex < queueImage.length)
-    {
+    {   
+        console.log(currentIndex)
         imageKeep.push(queueImage[currentIndex]);
         const keep = document.createElement('img');
-        keep.src = imageKeep[currentIndex].url
+        keep.src = imageKeep[tracking].url
         document.getElementById('keeps').append(keep)
         keep.classList.add('image-keep');
         console.log(imageKeep);
+        tracking++
         currentIndex++
         display_image()
     }
@@ -112,8 +115,46 @@ document.getElementById('check-keep').addEventListener("click",()=>{
     }
     
 })
+//Swipe
+
+let startX = 0;
+let endX = 0;
+
+function swipe() {
+    const deltaX = endX - startX;
+
+    if (deltaX > 0) {
+        console.log('keep');
+        document.getElementById('keep').click();
+
+    } else {
+        console.log('delete'); // swipe left
+        document.getElementById('delete').click();
+    }
+}
+
+const card = document.querySelector('.card');
+
+//mobile
+card.addEventListener("touchstart", (e) => {
+    startX = e.changedTouches[0].screenX;
+},{passive:true});
+
+card.addEventListener("touchend", (e) => {
+    endX = e.changedTouches[0].screenX;
+    swipe();
+},{passive:true});
 
 
+//website
 
+//mouse is pressed
 
+card.addEventListener('mousedown',(e) =>{
+    startX = e.screenX;
+})
 
+card.addEventListener('mouseleave', (e)=>{
+    endX = e.screenX
+    swipe();
+})
