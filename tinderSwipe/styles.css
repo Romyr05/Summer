@@ -13,6 +13,7 @@ body{
 
 .navbar{
     border: none;
+    color: white;
 }
 
 .links ul{
@@ -34,6 +35,7 @@ body{
 #logo{
     padding-left: 20px;
     padding-right: 30px;
+    color: black
 }
 
 .keep{
@@ -49,7 +51,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-
 
 .card
 {
@@ -189,3 +190,5 @@ body{
 #keeps{
     display: none;
 }
+
+
