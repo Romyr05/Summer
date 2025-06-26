@@ -12,19 +12,40 @@ body{
 }
 
 .navbar{
-    border: none;
-    color: white;
+    background: rgba(198, 185, 185, 0.9);
+    padding: 1rem 0;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.navbar.hidden {
+  top: -100px; /* hides the navbar by moving it up */
 }
 
 .links ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
     padding-left: 20px;
     list-style-type: none;
     overflow: hidden;
 }
 
 .links a{
+    color: #bf7070;
     text-decoration: none;
-    padding-left: 20px;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+}
+
+.links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 .links li{
@@ -103,7 +124,7 @@ body{
 
 #keep-div, #delete-div {
     margin-top: 80px;
-    border: 2px solid #ddd;
+    border: 2px solid #160808;
     border-radius: 50%;
     height: 80px;
     width: 80px;
@@ -174,10 +195,12 @@ body{
 .progress-container {
     width: 80%;
     height: 10px;
-    background-color: #ddd;
+    background-color: #461919;
     border-radius: 5px;
-    margin: 51px auto;
+    margin: 60px auto;
     overflow: hidden;
+    z-index: 1000;
+    position: relative;
 }
 
 .progress-bar {
@@ -191,4 +214,68 @@ body{
     display: none;
 }
 
+.gallery {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-right: 40px;
+}
 
+
+
+.gallery-item {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+@keyframes animate-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.gallery-item.left{
+    justify-content: flex-start;
+}
+
+.gallery-item.right{
+    justify-content: flex-end;
+}
+
+.gallery-item img{
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.gallery-item.left.in-view .content {
+  animation: animate-left 1s ease;
+}
+
+.gallery-item.right.in-view .content {
+  animation: animate-right 1s ease;
+}

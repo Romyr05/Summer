@@ -146,13 +146,11 @@ card.addEventListener("touchstart", (e) => {
 card.addEventListener("touchend", (e) => {
     endX = e.changedTouches[0].screenX;
     swipe();
-},{passive:true});
+},{passive:true}); // need passive:true since it tells the browser nga okay lang nga i change ko ang browsing function
 
 
 //website
-
 //mouse is pressed
-
 card.addEventListener('mousedown',(e) =>{
     startX = e.screenX;
 })
@@ -167,3 +165,48 @@ function updateProgressBar() {
     const progress = (currentIndex / queueImage.length) * 100;
     document.getElementById('progress-bar').style.width = `${progress}%`;
 }
+
+
+//y-index 
+let yscroll = window.scrollY
+
+//if scroll check the y-index after scroll
+addEventListener("scroll" ,() =>{
+    const nav = document.getElementById("navbar");
+    Cscroll = window.scrollY;
+    if(Cscroll > yscroll && Cscroll > 50)
+    {
+        //add a classlist called hidden; css function just puts the navbar on a negative value
+        nav.classList.add('hidden')
+    }
+    //if scrolled up and is less than 50 pixels it will remove the class just here 
+    //will not run the task
+    else{
+        nav.classList.remove('hidden')
+    }
+    // every after same value to check if the user has scrolled up or scrolled down
+    yscroll = Cscroll
+})
+
+document.addEventListener("DOMContentLoaded", () =>{
+    // this watches in the viewport if the entries are intersecting with one another
+    const observer = new IntersectionObserver( (entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting)
+            {
+                entry.target.classList.add('in-view')
+            }else{
+                entry.target.classList.remove('in-view')
+            }
+        })
+    })
+
+    //collects all the classes that have data-animate in them
+    const animated = document.querySelectorAll('[data-animate]');
+
+    //this calles on the aboveforementioned intersectionObserver
+    //This then watches each data-animate if they are intersecting with the viewport
+    animated.forEach(element => {
+        observer.observe(element)
+    })
+})
