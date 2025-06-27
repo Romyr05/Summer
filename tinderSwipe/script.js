@@ -187,26 +187,3 @@ addEventListener("scroll" ,() =>{
     // every after same value to check if the user has scrolled up or scrolled down
     yscroll = Cscroll
 })
-
-document.addEventListener("DOMContentLoaded", () =>{
-    // this watches in the viewport if the entries are intersecting with one another
-    const observer = new IntersectionObserver( (entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting)
-            {
-                entry.target.classList.add('in-view')
-            }else{
-                entry.target.classList.remove('in-view')
-            }
-        })
-    })
-
-    //collects all the classes that have data-animate in them
-    const animated = document.querySelectorAll('[data-animate]');
-
-    //this calles on the aboveforementioned intersectionObserver
-    //This then watches each data-animate if they are intersecting with the viewport
-    animated.forEach(element => {
-        observer.observe(element)
-    })
-})
