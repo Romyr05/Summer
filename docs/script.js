@@ -56,7 +56,7 @@ function display_image() {
         track_queue++
     }else
     {
-        document.getElementById('test123').src = "test.png"
+        document.getElementById('test123').src = "./images/test.png"
     }
 }
 
